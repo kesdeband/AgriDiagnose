@@ -1,0 +1,122 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    tools:context="com.agrinett.agridiagnose.app.QuestionFragment">
+
+    <TextView
+        android:text="@string/question_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/tvHeader"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textStyle="normal|bold"
+        android:textSize="18sp"
+        android:textAlignment="center" />
+
+
+    <TextView
+        android:id="@+id/tvQuestionLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvHeader"
+        android:layout_marginTop="29dp"
+        android:text="@string/question_tv_ques"
+        android:textStyle="normal|bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvQuestionLabel"
+        android:layout_marginTop="11dp"
+        android:id="@+id/tvQuestion"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageButton
+        android:id="@+id/iBtnHelp"
+        style="@android:style/Widget.DeviceDefault.Light.ImageButton"
+        android:contentDescription="@string/question_btn_help"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tvQuestionLabel"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:background="@color/colorAccent"
+        android:src="@drawable/help"
+        android:visibility="visible" />
+
+
+    <Button
+        android:id="@+id/btnResponse"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvQuestion"
+        android:layout_marginTop="18dp"
+        android:background="@color/colorAccent"
+        android:text="@string/question_btn_choices" />
+
+    <TextView
+        android:id="@+id/tvResponseLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btnResponse"
+        android:layout_marginTop="19dp"
+        android:text="@string/question_tv_response"
+        android:textStyle="normal|bold"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/tvResponse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvResponseLabel"
+        android:layout_marginTop="11dp"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnReset"
+        android:layout_alignBottom="@+id/btnReset"
+        android:layout_marginLeft="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_toEndOf="@+id/btnReset"
+        android:layout_toRightOf="@+id/btnReset"
+        android:background="@color/colorAccent"
+        android:text="@string/question_btn_next" />
+
+    <Button
+        android:id="@+id/btnReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginStart="17dp"
+        android:layout_toEndOf="@+id/tvResponseLabel"
+        android:layout_toRightOf="@+id/tvResponseLabel"
+        android:background="@color/colorAccent"
+        android:text="@string/question_btn_reset" />
+
+</RelativeLayout>

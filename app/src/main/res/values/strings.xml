@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">AgriDiagnose</string>
+    <!-- Strings for menu -->
+    <string name="action_sync">Sync</string>
+
+    <!-- Strings for REST API -->
+    <!--<string name="request_tag">"com.example.kes.agridiagnose.volley.JsonRequest"</string>-->
+    <!--<string name="characteristics_rest_url">http://191.237.68.123/medlive/MedTracker.dll/datasnap/rest/TResources/synccharacteristics</string>-->
+    <!--<string name="models_rest_url">http://191.237.68.123/medlive/MedTracker.dll/datasnap/rest/TResources/syncmodels</string>-->
+    <!--<string name="model_details_rest_url">http://191.237.68.123/medlive/MedTracker.dll/datasnap/rest/TResources/syncmodeldetails</string>-->
+    <!--<string name="scales_rest_url">http://191.237.68.123/medlive/MedTracker.dll/datasnap/rest/TResources/syncscales</string>-->
+    <!--<string name="qualitative_scale_rest_url">http://191.237.68.123/medlive/MedTracker.dll/datasnap/rest/TResources/syncqualitativescale</string>-->
+    <!--<string name="qualitative_scale_values_rest_url">http://191.237.68.123/medlive/MedTracker.dll/datasnap/rest/TResources/syncqualitativescalevalues</string>-->
+
+    <string name="characteristics_rest_url">http://191.237.68.123/plantlive/PlantTracker.dll/datasnap/rest/TResources/synccharacteristics</string>
+    <string name="models_rest_url">http://191.237.68.123/plantlive/PlantTracker.dll/datasnap/rest/TResources/syncmodels</string>
+    <string name="model_details_rest_url">http://191.237.68.123/plantlive/PlantTracker.dll/datasnap/rest/TResources/syncmodeldetails</string>
+    <string name="scales_rest_url">http://191.237.68.123/plantlive/PlantTracker.dll/datasnap/rest/TResources/syncscales</string>
+    <string name="qualitative_scale_rest_url">http://191.237.68.123/plantlive/PlantTracker.dll/datasnap/rest/TResources/syncqualitativescale</string>
+    <string name="qualitative_scale_values_rest_url">http://191.237.68.123/plantlive/PlantTracker.dll/datasnap/rest/TResources/syncqualitativescalevalues</string>
+
+    <!-- Strings related to No internet fragment -->
+    <string name="no_conn_header">No Internet Connection</string>
+    <string name="no_conn_msg">Please turn on Wifi or Mobile Data</string>
+    <string name="no_internet_img">No Internet Image</string>
+
+    <!-- Strings related to No sync fragment -->
+    <string name="sync_msg">Please sync client data before continuing</string>
+    <string name="sync_img">Sync Image</string>
+
+    <!-- Strings related to question fragment -->
+    <string name="question_title">Digital Plant Pathologist</string>
+    <string name="question_tv_ques">Question:</string>
+    <string name="question_btn_help">Help</string>
+    <string name="question_tv_response">Response:</string>
+    <string name="question_btn_choices">Choose a Response&#8230;</string>
+    <string name="question_btn_reset">Reset</string>
+    <string name="question_btn_next">Next</string>
+    <string name="question_btn_diagnose">Diagnose</string>
+
+</resources>
