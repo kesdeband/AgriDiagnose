@@ -29,16 +29,15 @@ public class NetworkBroadcastReceiver extends BroadcastReceiver {
     }
 
     private int getConnectivityStatus(Context context) {
-        Repository repository = new Repository(context);
         int results;
-        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo activeNetwork = cm != null ? cm.getActiveNetworkInfo() : null;
+        Repository repository = new Repository(context);
 
         if(repository.QueryIsSynced()) {
             results = TYPE_CONNECTED;
         }
         else {
             results = TYPE_NOT_SYNC;
+            NetworkInfo activeNetwork = repository.GetNetworkInfo();
             if(activeNetwork == null) {
                 results = TYPE_NOT_CONNECTED;
             }

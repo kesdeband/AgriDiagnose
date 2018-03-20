@@ -4,6 +4,9 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+
 import com.agrinett.agridiagnose.data.AgriDiagnoseContract.CharacteristicsEntry;
 import com.agrinett.agridiagnose.data.AgriDiagnoseContract.DiseaseModelEntry;
 import com.agrinett.agridiagnose.data.AgriDiagnoseContract.DiseaseModelDetailsEntry;
@@ -29,9 +32,17 @@ import java.util.Map;
 public class Repository implements IRepository {
 
     private DatabaseHelper databaseHelper;
+    private Context context;
 
     public Repository(Context context) {
+        this.context = context;
         databaseHelper = DatabaseHelper.getInstance(context);
+    }
+
+    @Override
+    public NetworkInfo GetNetworkInfo() {
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        return cm != null ? cm.getActiveNetworkInfo() : null;
     }
 
     @Override

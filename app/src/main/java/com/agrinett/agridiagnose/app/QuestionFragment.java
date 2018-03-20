@@ -2,7 +2,7 @@ package com.agrinett.agridiagnose.app;
 
 import android.os.Bundle;
 import android.app.Fragment;
-import android.support.v4.content.ContextCompat;
+// import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -138,8 +138,8 @@ public class QuestionFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 new MaterialDialog.Builder(getActivity())
-                        .icon(ContextCompat.getDrawable(getActivity(), R.drawable.help))
-                        .title("Reason for asking...")
+//                        .icon(ContextCompat.getDrawable(getActivity(), R.drawable.help))
+                        .title("Reason for asking?")
                         .content(reason)
                         .neutralText("Close")
                         .show();
@@ -156,10 +156,10 @@ public class QuestionFragment extends Fragment {
                     .itemsCallbackSingleChoice(-1, new MaterialDialog.ListCallbackSingleChoice() {
                         @Override
                         public boolean onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
-                            /**
+                            /*
                              * If you use alwaysCallSingleChoiceCallback(), which is discussed below,
                              * returning false here won't allow the newly selected radio button to actually be selected.
-                             **/
+                             */
                             if(text != null) {
                                 String response = text.toString();
                                 showResponse(response);

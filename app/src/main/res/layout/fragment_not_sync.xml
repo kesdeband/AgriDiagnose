@@ -2,25 +2,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.agrinett.agridiagnose.app.NotSyncFragment">
 
     <ImageView
-        android:id="@+id/imgNoWifi"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:id="@+id/imgNotSync"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="140dp"
-        android:minHeight="150dp"
+        android:layout_marginTop="120dp"
         android:contentDescription="@string/sync_img"
-        app:srcCompat="@mipmap/ic_cloud_sync" />
+        android:src="@drawable/ic_cloud_sync" />
 
     <TextView
         android:id="@+id/txtMsg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imgNoWifi"
+        android:layout_below="@+id/imgNotSync"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"
         android:text="@string/sync_msg" />

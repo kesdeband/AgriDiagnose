@@ -93,30 +93,54 @@
         android:layout_marginTop="11dp"
         android:visibility="invisible" />
 
-    <Button
-        android:id="@+id/btnNext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/btnReset"
-        android:layout_alignBottom="@+id/btnReset"
-        android:layout_marginLeft="25dp"
-        android:layout_marginStart="25dp"
-        android:layout_toEndOf="@+id/btnReset"
-        android:layout_toRightOf="@+id/btnReset"
-        android:background="@color/colorAccent"
-        android:text="@string/question_btn_next" />
+    <!--<Button-->
+        <!--android:id="@+id/btnReset"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
 
-    <Button
-        android:id="@+id/btnReset"
-        android:layout_width="wrap_content"
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:background="@color/colorAccent"-->
+        <!--android:text="@string/question_btn_reset" />-->
+
+    <!--<Button-->
+        <!--android:id="@+id/btnNext"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:background="@color/colorAccent"-->
+        <!--android:text="@string/question_btn_next" />-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="16dp"
-        android:layout_marginLeft="17dp"
-        android:layout_marginStart="17dp"
-        android:layout_toEndOf="@+id/tvResponseLabel"
-        android:layout_toRightOf="@+id/tvResponseLabel"
-        android:background="@color/colorAccent"
-        android:text="@string/question_btn_reset" />
+        android:layout_centerHorizontal="false"
+        android:gravity="center_horizontal"
+        style="?android:attr/buttonBarButtonStyle"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnReset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/colorAccent"
+            android:text="@string/question_btn_reset" />
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:background="@color/colorAccent"
+            android:text="@string/question_btn_next" />
+
+    </LinearLayout>
 
 </RelativeLayout>

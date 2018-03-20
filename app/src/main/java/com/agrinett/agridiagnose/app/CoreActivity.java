@@ -5,16 +5,19 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.IntentFilter;
+//import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.ResultReceiver;
-import android.support.design.widget.FloatingActionButton;
+//import android.support.design.widget.FloatingActionButton;
+//import android.support.design.widget.Snackbar;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
+//import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.View;
+//import android.util.Log;
+//import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -23,6 +26,8 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.agrinett.agridiagnose.R;
 import com.agrinett.agridiagnose.broadcasts.INetworkListener;
 import com.agrinett.agridiagnose.broadcasts.NetworkBroadcastReceiver;
+import com.agrinett.agridiagnose.data.IRepository;
+import com.agrinett.agridiagnose.data.Repository;
 import com.agrinett.agridiagnose.rest.JsonClient;
 import com.agrinett.agridiagnose.rest.VolleyRequestQueue;
 import com.agrinett.agridiagnose.services.SyncIntentService;
@@ -51,6 +56,7 @@ public class CoreActivity extends AppCompatActivity implements INetworkListener 
                 .content("Please wait")
                 .progress(true, 0)
                 .icon(ContextCompat.getDrawable(this, R.drawable.sync))
+//                .icon(ResourcesCompat.getDrawable(getResources(), R.drawable.sync, null))
                 .progressIndeterminateStyle(true);
         materialDialog = dialogBuilder.build();
 
@@ -100,8 +106,15 @@ public class CoreActivity extends AppCompatActivity implements INetworkListener 
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_sync) {
-            materialDialog.show();
-            syncWithMiddleware();
+            IRepository repository = new Repository(CoreActivity.this);
+            if(repository.GetNetworkInfo() == null) {
+                Snackbar.make(findViewById(R.id.coreLayout), "No internet connection.", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null)
+                        .show();
+            }
+            else {
+                syncWithMiddleware();
+            }
             return true;
         }
 
@@ -110,7 +123,7 @@ public class CoreActivity extends AppCompatActivity implements INetworkListener 
 
     @Override
     public void onNetworkStatusChanged(int status) {
-        Log.d("Status", String.valueOf(status));
+//        Log.d("Status", String.valueOf(status));
         setView(status);
     }
 

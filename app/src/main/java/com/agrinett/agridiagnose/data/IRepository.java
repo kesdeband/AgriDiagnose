@@ -1,5 +1,8 @@
 package com.agrinett.agridiagnose.data;
 
+import android.content.Context;
+import android.net.NetworkInfo;
+
 import com.agrinett.agridiagnose.models.Characteristic;
 import com.agrinett.agridiagnose.models.DiseaseModel;
 
@@ -11,6 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 public interface IRepository {
+    NetworkInfo GetNetworkInfo();
     boolean QueryIsSynced();
     void NonQuerySyncData(HashMap<String, JSONObject> data) throws JSONException;
     List<Characteristic> QueryFilterQuestions();
